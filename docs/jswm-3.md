@@ -5,19 +5,20 @@ email: jgarciah@faculty.ie.edu
 date: 2020-04-20
 ---
 
+
 # Plan for today
 
 Today we will:
 
 >- Learn the basics of Javascript
->- Understand how Javascript is use in web development
+>- Learn about the DOM
+>- Understand JS events
 
 # What's Javascript
 
 **Javascript** is a dynamic programming language, multiparadign, and
 with weak typing.
 
- 
 
 # What's Javascript
 
@@ -28,12 +29,12 @@ programming language.
 
 # Differences with Python
 
-1.  Indentation doesn't matter (although is better to indent your
-    code). Blocks are delimited by curly brackets **{}**
-2.  functions are declared with **function**, not **def**.
-3.  variables are declared using **let**.
-4.  Convention to use **camelCase** instead of **under\_score** for
-    naming
+1. Indentation doesn't matter (although is better to indent your
+   code). Blocks are delimited by curly brackets **{}**
+2. functions are declared with **function**, not **def**.
+3. variables are declared using **let**.
+4. Convention to use **camelCase** instead of **under_score** for
+   naming
 
 # JS is NOT Java
 
@@ -45,7 +46,7 @@ as a marketing trick.
 Although it initially was developed to be run on the browser, currently
 JS runs on several different platforms:
 
-- Browser\
+- Browser
 - Natively (using **Node JS**, **GraalVM**)
 - JVM (using **Rhino**)
 - On Mobile phones (using **React native**)
@@ -131,15 +132,16 @@ if (<condition>) {
 }
 ```
 
+
 # Boolean operators
 
-  Python   JS
-  -------- ------
-  ==       ===
-  !=       !==
-  and      &&
-  or       ||
-  not      !
+  | Python | JS    |
+  |:-------|:------|
+  | `==`   | `===` |
+  | `!=`   | `!==` |
+  | `and`  | `&&`  |
+  | `or`   | `||`  |
+  | `not`  | `!`   |
 
 # Arrays
 
@@ -248,13 +250,13 @@ for (let value in elements) {
 
 # For loops
 
-Let's do the exercises on **loops.js**
+## Practice
+
+Let's do the exercises together **loops.js**
 
 # Exercise
 
-Create a function to check if a given array is *palindromic**.***
-
- 
+Create a function to check if a given array is **palindromic**.
 
 Keep in mind that you'll need to implement a function to check if
 arrays are equal.
@@ -270,9 +272,7 @@ we do it using the DOM.
 
 ## changing inner HTML
 
-# The DOM
-
-## changing inner HTML
+. . .
 
 ```javascript
 document
@@ -280,15 +280,25 @@ document
     .innerHTML = "potato";
 ```
 
+. . .
+
 **document** points to the root of the DOM
+
+. . .
 
 **querySelector** is a method that we use to obtain the first element
 that matches a CSS selector
+
+. . .
 
 **innerHTML** is the attribute that represents the HTML inside an
 element
 
 # The DOM
+
+## Adding classes
+
+. . .
 
 ```javascript
 document
@@ -296,12 +306,17 @@ document
     .classList.add("my-class");
 ```
 
+. . .
+
 **classList** is an attribute of HTML elements with which we can manage
 its classes
 
-## Adding classes
 
 # The DOM
+
+## creating new elements
+
+. . .
 
 ```javascript
 const parent = document
@@ -315,39 +330,18 @@ child.innerText = "this is the inner text";
 parent.appendChild(child);
 ```
 
-## creating new elements
+. . .
 
 We can create new elements with **document.createElement**
 
 We can add them later to other elements with
 **parent.appendChild(child)**
 
-# Exercises
+# DOM
 
-```javascript
-const bands = [
-    {
-      name: "The Beatles",
-      instruments: {
-        John: "voice",
-        Paul: "bass",
-        Ringo: "drums",
-        George: "guitar"
-      }
-    },
-    {
-      name: "The Ramones",
-      instruments: {
-        Johnny: "voice",
-        Joey: "guitar",
-        Marky: "drums",
-        DeeDee: "bass"
-      }
-    }
-  ];
-```
+## Exercises
 
-Use the given data and render it nicely in HTML
+Use the given data and render it nicely in HTML.
 
 # Events
 
@@ -386,7 +380,9 @@ button.addEventListener('click', showAlert);
 
 # Handling events
 
-see **events.js**
+## Practice
+
+Let's solve exercises in **events.js**.
 
 # Exercises
 
@@ -430,7 +426,7 @@ Create a **simple** web page in which the user can write the name of a
 song in an **input** field and get the lyrics of that song.
 
 You'll also need to investigate how to do HTTP requests from Javascript
-(https://developer.mozilla.org/en-US/docs/Web/API/Fetch\_API/Using_Fetch).
+(https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch).
 
 This is the API you'll need to use
 https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search?console=1

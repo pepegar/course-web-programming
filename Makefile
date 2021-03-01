@@ -7,7 +7,8 @@ all: $(objects)
 
 $(output)/%.pdf: $(source)/%.md
 	pandoc \
-		--pdf-engine=xelatex	 \
+		--pdf-engine=xelatex \
+		--variable monofont="PragmataPro Mono" \
 		--variable fontsize=12pt \
 		--variable theme=Madrid \
 		-f markdown $< \
