@@ -434,5 +434,3 @@ You'll also need to investigate how to do HTTP requests from Javascript
 
 This is the API you'll need to use
 https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search?console=1
-
- 
