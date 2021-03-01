@@ -1,121 +1,84 @@
 ---
 title: Programming Javascript for Web and Mobile
-author: Pepe García
+author: Pepe García <jgarciah@faculty.ie.edu>
 email: jgarciah@faculty.ie.edu
 date: 2020-04-20
-lang: en
 ---
 
-Programming Javascript for Web and Mobile
-=========================================
-
-
-Plan for today
-==============
+# Plan for today
 
 Today we will:
 
- 
+>- Learn the basics of Javascript
+>- Understand how Javascript is use in web development
 
-\- Learn the basics of Javascript
-
-\- Understand how Javascript is use in web development
-
-What\'s Javascript
-==================
+# What's Javascript
 
 **Javascript** is a dynamic programming language, multiparadign, and
 with weak typing.
 
  
 
-What\'s Javascript
-==================
+# What's Javascript
 
-**JS** has become ubiquitous because it\'s the only web-native
+**JS** has become ubiquitous because it's the only web-native
 programming language.
 
  
 
-Differences with Python
-=======================
+# Differences with Python
 
-1.  Indentation doesn\'t matter (although is better to indent your
+1.  Indentation doesn't matter (although is better to indent your
     code). Blocks are delimited by curly brackets **{}**
 2.  functions are declared with **function**, not **def**.
 3.  variables are declared using **let**.
 4.  Convention to use **camelCase** instead of **under\_score** for
     naming
 
-JS is NOT Java
-==============
+# JS is NOT Java
 
 JS is **not** Java.  The creators of JS decided to prefix it with Java
 as a marketing trick.
 
- 
-
-Not only in the browser
-=======================
+# Not only in the browser
 
 Although it initially was developed to be run on the browser, currently
 JS runs on several different platforms:
 
- 
-
-\- Browser\
-- Natively (using **Node JS**)\
+- Browser\
+- Natively (using **Node JS**, **GraalVM**)
 - JVM (using **Rhino**)
+- On Mobile phones (using **React native**)
 
-\- on Mobile phones (using **React native**)
-
- 
-
-Using JS
-========
+# Using JS
 
 As with CSS there are several ways to include JS in a webpage
 
- 
+# Using JS
 
-Using JS
-========
-
-We can use a **\<script\>** tag and inline the JS code inside.
-
- 
+We can use a **`<script>`** tag and inline the JS code inside.
 
 See **inline-js.html**
 
-Using JS
-========
+# Using JS
 
 We can also include external JS files in our web page.
 
- 
-
 See **external-js.html**
 
-Variables
-=========
+# Variables
 
 Variables are created in JS using the **let** keyword:
 
- 
+```javascript
+let age = 28;
+let name = "Pepe";
+let lastName = "García";
+```
+# Variables
 
-    let age = 28;
-    let name = "Pepe";
-    let lastName = "García";
-
-Variables
-=========
-
-Variables whose value never changes are called constants, and they\'re
-created with the \`const\` keyword:
-
- 
-
- 
+Variables whose value never changes are called constants, and they're
+created with the **`const`** keyword:
 
 ```javascript
 const gravityAcceleration = 9.8;
@@ -123,8 +86,7 @@ gravityAcceleration = 33;
 // Uncaught TypeError: Assignment to constant variable.
 ```
 
-Functions
-=========
+# Functions
 
 Functions are created in JS using the **function** keyword.
 
@@ -135,8 +97,7 @@ function <name> (<params>) {
 }
 ```
 
-Functions
-=========
+# Functions
 
 ```javascript
 function areaTriangle(b, h) {
@@ -144,24 +105,21 @@ function areaTriangle(b, h) {
 }
 ```
 
-Arrow functions
-===============
+# Arrow functions
 
 ```javascript
 const areaTriangle = (b, h) => b * h / 2;
 ```
 
-There\'s also a shorthand in Javascript for declaring **anonimous
+There's also a shorthand in Javascript for declaring **anonimous
 functions**, using **arrow functions**.
 
-Conditionals
-============
+# Conditionals
 
 As in Python, we use conditionals in JS to do different things in our
 program depending on a value.
 
-Conditionals
-============
+# Conditionals
 
 ```javascript
 if (<condition>) {
@@ -173,19 +131,17 @@ if (<condition>) {
 }
 ```
 
-Boolean operators
-=================
+# Boolean operators
 
   Python   JS
   -------- ------
   ==       ===
   !=       !==
   and      &&
-  or       \|\|
+  or       ||
   not      !
 
-Arrays
-======
+# Arrays
 
 **arrays** or **lists** are used to store collections of values in JS
 
@@ -195,8 +151,7 @@ elements[0] = 22;
 let copyOfElements = elements.slice();
 ```
 
-Array.push
-==========
+# Array.push
 
 We add an element to the end of an array using the **push method**
 
@@ -205,8 +160,7 @@ let elements = [1,2,3];
 elements.push(4);
 ```
 
-Array.pop
-=========
+# Array.pop
 
 We remove an element in the given position of an array with the pop
 method.
@@ -216,8 +170,7 @@ let elements = [1,2,3];
 elements.pop(0);
 ```
 
-Objects
-=======
+# Objects
 
 Objects are key-value pairs.  We create them using curly brackets:
 
@@ -230,8 +183,7 @@ let beatles = {
 }
 ```
 
-Objects
-=======
+# Objects
 
 We can access the values of the object as if they were **properties** or
 using the **key**:
@@ -242,13 +194,11 @@ beatles["drummer"]
 beatles.drummer
 ```
 
-Loops
-=====
+# Loops
 
 As in Python, we can loop using **while** and **for** loops.
 
-While loops
-===========
+# While loops
 
 ```javascript
 while(<condition>) {
@@ -256,42 +206,28 @@ while(<condition>) {
 }
 ```
 
-For loops
-=========
+# For loops
 
 The for loop a bit different from the one in Python.
 
 It receives some config, in which we specify three different sections
 separated by semicolons (**;**):
 
- 
-
 1.  The creation of the *loop variable*.  It can be something like **let
     i = 0**.
 2.  The condition that needs to be truthy for the loop to keep
-    iterating.  **i \< 33.**
+    iterating.  **i < 33.**
 3.  The update we do to the *loop variable* on every iteration. **i++**.
 
- 
+# For loops
 
-For loops
-=========
-
- 
-
-1\. The creation of the *loop variable*.  It can be something like **let
+1. The creation of the *loop variable*.  It can be something like **let
 i = 0**.
 
- 
+2. The condition that needs to be truthy for the loop to keep
+iterating.  **i < 10.**
 
-2\. The condition that needs to be truthy for the loop to keep
-iterating.  **i \< 10.**
-
- 
-
-3\. The update we do to the *loop variable* on every iteration. **i++**.
-
- 
+3. The update we do to the *loop variable* on every iteration. **i++**.
 
 ```javascript
 for (let i = 0; i < 10; i++) {
@@ -299,8 +235,7 @@ for (let i = 0; i < 10; i++) {
 }
 ```
 
-For loops
-=========
+# For loops
 
 One can also use loops in a way similar to Python using the shorthand
 syntax:
@@ -311,40 +246,33 @@ for (let value in elements) {
 }
 ```
 
-For loops
-=========
+# For loops
 
-Let\'s do the exercises on **loops.js**
+Let's do the exercises on **loops.js**
 
-Exercise
-========
+# Exercise
 
 Create a function to check if a given array is *palindromic**.***
 
  
 
-Keep in mind that you\'ll need to implement a function to check if
+Keep in mind that you'll need to implement a function to check if
 arrays are equal.
 
-The DOM
-=======
+# The DOM
 
 The DOM (**Document Object Model**) is the representation of the HTML of
 a webpage that we have available in Javascript.  We can
 modify/access/create/delete HTML elements directly from Javascript, and
 we do it using the DOM.
 
-The DOM
-=======
+# The DOM
 
-changing inner HTML
--------------------
+## changing inner HTML
 
-The DOM
-=======
+# The DOM
 
-changing inner HTML
--------------------
+## changing inner HTML
 
 ```javascript
 document
@@ -360,8 +288,7 @@ that matches a CSS selector
 **innerHTML** is the attribute that represents the HTML inside an
 element
 
-The DOM
-=======
+# The DOM
 
 ```javascript
 document
@@ -372,11 +299,9 @@ document
 **classList** is an attribute of HTML elements with which we can manage
 its classes
 
-Adding classes
---------------
+## Adding classes
 
-The DOM
-=======
+# The DOM
 
 ```javascript
 const parent = document
@@ -390,16 +315,14 @@ child.innerText = "this is the inner text";
 parent.appendChild(child);
 ```
 
-creating new elements
----------------------
+## creating new elements
 
 We can create new elements with **document.createElement**
 
 We can add them later to other elements with
 **parent.appendChild(child)**
 
-Exercises {#exercises style="text-align: left;"}
-=========
+# Exercises
 
 ```javascript
 const bands = [
@@ -426,40 +349,29 @@ const bands = [
 
 Use the given data and render it nicely in HTML
 
-Events
-======
+# Events
 
-Events are at the very heart of JS.  Some even say that it\'s an event
-oriented language.  With events we can handle how a webpage reacts to
+Events are at the very heart of JS.  Some even say that it's an **event
+oriented language**.  With events we can handle how a webpage reacts to
 certain actions.
 
-Examples of events
-==================
+# Examples of events
 
--   [click in a button]{.text-4505230f--TextH400-3033861f}
+- **click in a button**
+- **scroll**
+- **change the contents of a text field**
+- **a timer expires**
+- **data from the server arrives**
 
--   [scroll]{.text-4505230f--TextH400-3033861f}
+# Handling events
 
--   [change the contents of a text
-    field]{.text-4505230f--TextH400-3033861f}
+When handling events in JS we'll need to:
 
--   [a timer expires]{.text-4505230f--TextH400-3033861f}
+- select the element
+- add the handler function
+- add the event listener
 
--   [data from the server arrives]{.text-4505230f--TextH400-3033861f}
-
-Handling events
-===============
-
-When handling events in JS we\'ll need to:
-
- 
-
--   select the element
--   add the handler function
--   add the event listener
-
-Handling events
-===============
+# Handling events
 
 ```javascript
 // select the element
@@ -472,74 +384,55 @@ const showAlert = () => console.log('button clicked!');
 button.addEventListener('click', showAlert);
 ```
 
-Handling events
-===============
+# Handling events
 
 see **events.js**
 
-Exercises {#exercises-1 style="text-align: left;"}
-=========
+# Exercises
 
 Add four buttons to your previous web page, one saying voice, other
 saying bass, other saying drums, and other saying guitar.
 
- 
-
 Make sure that, when a button is clicked, the member that plays the
 given instrument in all bands gets highlighted.
 
- 
-
-references
-==========
+# references
 
 https://books.adalab.es/materiales-front-end-e
 
-Homework
-========
+# Homework
 
-Exercise 1
-==========
+# Exercise 1
 
 Create a simple webpage in which, when a button is clicked, all the
 links change their background to blue and their text color to white.
 
  
 
-Exercise 2
-==========
+# Exercise 2
 
 Investigate the functional methods on array.  Namely **map**,
 **filter**, **forEach**, and **reduce**.
 
 Try to apply them to the following cases:
 
--   given an array of numbers, return only the **even ones**
--   given an array of numbers, return its **sum**
--   given an array of numbers, **log all** in the console
--   given an array of numbers, return a new array with **all elements
-    squared**
+- given an array of numbers, return only the **even ones**
+- given an array of numbers, return its **sum**
+- given an array of numbers, **log all** in the console
+- given an array of numbers, return a new array with **all elements
+  squared**
 
- 
-
-Exercise 3
-==========
+# Exercise 3
 
 Investigate about forms in HTML.
-
- 
 
 Create a **simple** web page in which the user can write the name of a
 song in an **input** field and get the lyrics of that song.
 
- 
+You'll also need to investigate how to do HTTP requests from Javascript
+(https://developer.mozilla.org/en-US/docs/Web/API/Fetch\_API/Using_Fetch).
 
-You\'ll also need to investigate how to do HTTP requests from Javascript
-(https://developer.mozilla.org/en-US/docs/Web/API/Fetch\_API/Using\_Fetch).
-
- 
-
-This is the API you\'ll need to use
-https://lyricsovh.docs.apiary.io/\#reference/0/lyrics-of-a-song/search?console=1
+This is the API you'll need to use
+https://lyricsovh.docs.apiary.io/#reference/0/lyrics-of-a-song/search?console=1
 
  
