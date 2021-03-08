@@ -1,126 +1,126 @@
 ---
 title: Software Development for Web and Mobile
-author: Pepe García
+subtitle: Communication between backend and frontend
+author: Pepe García <jgarciah@faculty.ie.edu>
 email: jgarciah@faculty.ie.edu
-date: 2020-04-20
-lang: en
 ---
 
-Software Development for Web and Mobile
-=======================================
 
-
-Plan for today
-==============
+# Plan for today
 
 Today we will:
 
- 
+- Learn how to communicate with http services
+- Do some exercises in class
 
-\- Learn how to communicate with http services
-
-\- Do some exercises in class
-
-Fetch
-=====
+# Fetch
 
 **fetch** is the way of calling HTTP services from Javascript.
 
-    fetch("url"); //done!
+```javascript
+fetch("url"); //done!
+```
 
-Fetch
-=====
+
+# Fetch
 
 We can customize our request using the second parameter:
 
-    fetch(
-        "url",
-        {
-            method: "POST",
-            headers: {},
-            body: "this is the body"
-        }
-    );
+```javascript
+fetch(
+    "url"
 
-Fetch
-=====
+
+
+
+
+);
+```
+
+# Fetch
+
+We can customize our request using the second parameter:
+
+```javascript
+fetch(
+    "url",
+    {
+        method: "POST",
+        headers: {},
+        body: "this is the body"
+    }
+);
+```
+
+# Fetch
 
 but, how do we use the data returned from the server?
 
  
 
-let\'s open the console and see what does the following snippet return.
+let's open the console and see what does the following snippet return.
 
-``` {.less}
+```javascript
 let a = fetch("http://google.com");
 ```
 
-Promises
-========
+# Promises
 
-Promises are the solution used in JS for when we don\'t want to **block
+Promises are the solution used in JS for when we don't want to **block
 the program** while a  long running task is made.
-
- 
 
 By using promises, we create **asynchronous** code.
 
-Promises
-========
+# Promises
 
 **fetch** uses **Promises** to work asynchronously.
 
- 
+**Promises** can be in different states:
 
-**Promises** can be **pending**, **fulfilled** or **rejected**.
+- **pending**: the promise hasn't finished yet.
+- **fulfilled**: the promise finished correctly.
+- **rejected**: there was an error in the promise
 
- 
-
-\- **pending**: the promise hasn\'t finished yet.
-
-\- **fulfilled**: the promise finished correctly.
-
-**- rejected**: there was an error in the promise
-
-Promises
-========
+# Promises
 
 
-Promises
-========
+# Promises
 
 We use the methods **then** and **catch** to handle the different
 outcomes of the promise (**fulfilled** and  **rejected** respectively)
 
-``` {.less}
-let a = fetch("https://google.com")
-
-a.then((result) => console.log("the promise is fulfilled, and returned" + result))
-
-a.catch((error) => console.log("the promise failed with " + error)
+```javascript
+fetch("https://google.com")
+  .then((result) =>
+    console
+      .log("the promise is fulfilled, and returned" + result)
+  )
+  .catch((error) =>
+    console
+      .log("the promise failed with " + error)
+  )
 ```
 
-Back to fetch
-=============
+# Back to fetch
 
-To get the JSON response from fetch we need to use promise\'s **then**
+To get the JSON response from fetch we need to use promise's **then**
 method:
 
-``` {.less}
+```javascript
 fetch("http://api.open-notify.org/iss-now.json")
   .then(data => data.json())
   .then(json => console.log(json))
 ```
 
-Exercises
-=========
+# Practice
 
-Exercise 2
-==========
+Let's do this couple of exercises in class!
 
-Let\'s review **server.py** together
+## Exercises
 
-Exercise 2
-==========
+1. **Exercise 1** Let's create a webpage that displays information of
+   a random movie.  We'll use a couple of APIs to do it!
+   `8f63893f`
 
-Open **exercises.js**
+2. **Exercise 2** Let's implement the frontend for an application like
+   Twitter.
