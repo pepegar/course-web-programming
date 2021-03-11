@@ -1,126 +1,183 @@
 ---
-title: Software Development for Web and Mobile
-subtitle: Communication between backend and frontend
+title: Programming Javascript for Web and Mobile
+subtitle: The Box Model
 author: Pepe García <jgarciah@faculty.ie.edu>
 email: jgarciah@faculty.ie.edu
 ---
 
+# The box model
 
-# Plan for today
+All tags in HTML will behave as boxes.  These boxes have some common
+properties that we need to be aware of.
 
-Today we will:
+# The box model
 
-- Learn how to communicate with http services
-- Do some exercises in class
+::: {.columns}
+:::: {.column}
 
-# Fetch
+- **width** and **height** apply to the content of the box
 
-**fetch** is the way of calling HTTP services from Javascript.
+::::
+:::: {.column}
 
-```javascript
-fetch("url"); //done!
+![](./img/content.png)
+
+::::
+:::
+
+# The box model
+
+::: {.columns}
+:::: {.column}
+
+- **width** and **height** apply to the content of the box
+- The **padding** is the distance from the content to the border
+
+::::
+:::: {.column}
+
+![](./img/padding.png)
+
+::::
+:::
+
+# The box model
+
+::: {.columns}
+:::: {.column}
+
+- **width** and **height** apply to the content of the box
+- The **padding** is the distance from the content to the border
+- The **border** sits between the margin and padding
+
+::::
+:::: {.column}
+
+![](./img/border.png)
+
+::::
+:::
+
+# The box model
+
+::: {.columns}
+:::: {.column}
+
+- **width** and **height** apply to the content of the box
+- The **padding** is the distance from the content to the border
+- The **border** sits between the margin and padding
+- The **margin** is the distance from the border to the other elements
+
+::::
+:::: {.column}
+
+![](./img/all.png)
+
+::::
+:::
+
+# The box model
+
+``` {.css}
+background: #000;
+width: 100px;
+padding: 20px;
+margin: 20px;
+border: 5px solid orange;
 ```
 
+some CSS rules that we can apply to boxes:
 
-# Fetch
+# Display
 
-We can customize our request using the second parameter:
+the CSS display property describes how an element's box behaves
 
-```javascript
-fetch(
-    "url"
+All HTML values have a default display property.
 
+# display - **block**
 
+Block elements are those that start on a new line and fill their whole
+container, from left to right.
 
+Some block elements are **`<div>`**, **`<li>`**
 
+# display - **block**
 
-);
+`display.html`
+
+# display - **inline**
+
+Inline elements do not break the flow of text in a paragraph.  Some
+examples of inline-by-default elements are **`<a>`**, and **`<span>`**
+
+# display - **inline**
+
+`display.html`
+
+# display - **none**
+
+**`display:none`** makes the element not to be displayed in the screen.
+
+# display - **none**
+
+Let's clean up <https://www.huffingtonpost.es>
+
+# Horizontal centering
+
+One of the first things we'll want to do when creating the layout of a
+webpage is centering the content horizontally.
+
+This can be done using **margin** and **width**:
+
+``` {.css}
+body {
+  width: 800px;
+  margin: auto;
+}
 ```
 
-# Fetch
+# Horizontal centering
 
-We can customize our request using the second parameter:
+but, what happens when we resize the window?
 
-```javascript
-fetch(
-    "url",
-    {
-        method: "POST",
-        headers: {},
-        body: "this is the body"
-    }
-);
+# Horizontal centering
+
+**max-width** allows us to express the maximum width we want for a box,
+so it resizes in case of smaller screens.
+
+``` {.css}
+body {
+  max-width: 800px;
+  margin: auto;
+}
 ```
 
-# Fetch
+# Position
 
-but, how do we use the data returned from the server?
+we use the **position** css property to make more complex layouts.
 
- 
+There are a number of different values for it:
 
-let's open the console and see what does the following snippet return.
+# Position - **relative**
 
-```javascript
-let a = fetch("http://google.com");
-```
+**`position: relative;`** allows us to place the element related to where it
+would be placed by default.
 
-# Promises
+We can move them with: **top, bottom, right,** and **left.**
 
-Promises are the solution used in JS for when we don't want to **block
-the program** while a  long running task is made.
+# Position - **fixed**
 
-By using promises, we create **asynchronous** code.
+with the **`position: fixed;`** attribute we can make elements that stay
+in the same position.  These are elements whose position doesn't
+change even when scrolling.
 
-# Promises
+# Position - **absolute**
 
-**fetch** uses **Promises** to work asynchronously.
-
-**Promises** can be in different states:
-
-- **pending**: the promise hasn't finished yet.
-- **fulfilled**: the promise finished correctly.
-- **rejected**: there was an error in the promise
-
-# Promises
-
-
-# Promises
-
-We use the methods **then** and **catch** to handle the different
-outcomes of the promise (**fulfilled** and  **rejected** respectively)
-
-```javascript
-fetch("https://google.com")
-  .then((result) =>
-    console
-      .log("the promise is fulfilled, and returned" + result)
-  )
-  .catch((error) =>
-    console
-      .log("the promise failed with " + error)
-  )
-```
-
-# Back to fetch
-
-To get the JSON response from fetch we need to use promise's **then**
-method:
-
-```javascript
-fetch("http://api.open-notify.org/iss-now.json")
-  .then(data => data.json())
-  .then(json => console.log(json))
-```
+with **`position: absolute;`** we can place elements like with **fixed** but
+relative to their *nearest positioned parent*
 
 # Practice
 
-Let's do this couple of exercises in class!
+##
 
-## Exercises
-
-1. **Exercise 1** Let's create a webpage that displays information of
-   a random movie.  We'll use a couple of APIs to do it!
-   `8f63893f`
-
-2. **Exercise 2** Let's implement the frontend for an application like
-   Twitter.
+Investigate `position.html`
