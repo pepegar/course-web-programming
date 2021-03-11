@@ -7,8 +7,10 @@ email: jgarciah@faculty.ie.edu
 
 # The box model
 
-All tags in HTML will behave as boxes.  These boxes have some common
-properties that we need to be aware of.
+All tags in HTML will behave like **boxes**.  These boxes have some
+common properties that we need to be aware of.
+
+Examples in `box.html`.
 
 # The box model
 
@@ -113,6 +115,13 @@ examples of inline-by-default elements are **`<a>`**, and **`<span>`**
 # display - **inline**
 
 `display.html`
+
+# display - **inline-block**
+
+We can create elements with `display: inline-block` that will:
+
+- accept **`top`**, **`bottom`**, **`left`**, and **`right`**, like `display: block`.
+- while allowing other elements to sit to their left and right, like `display: inline`.
 
 # display - **none**
 
